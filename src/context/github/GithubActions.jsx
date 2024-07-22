@@ -1,11 +1,10 @@
 import axios from "axios";
 
 const GITHUB_URL = process.env.REACT_APP_GITHUB_URL;
-const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
+// const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
 
 const github = axios.create({
-  baseURL: GITHUB_URL,
-  headers: { Authorization: `token ${GITHUB_TOKEN}` },
+  baseURL: GITHUB_URL
 });
 
 //get search results
@@ -14,7 +13,9 @@ export const searchUsers = async (text) => {
     q: text,
   });
 
-  const response = await github.get(`/search/users?${params}`);
+  //
+  const response = await axios.get(`${GITHUB_URL}/search/users?${params}`)
+  console.log("response", response)
   return response.data.items;
 };
 
