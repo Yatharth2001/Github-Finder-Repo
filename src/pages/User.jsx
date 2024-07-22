@@ -6,7 +6,7 @@ import { useParams, Link } from "react-router-dom";
 import RepoList from "../components/repos/RepoList";
 import { getUserAndRepos } from "../context/github/GithubActions";
 
-function User({}) {
+function User() {
   const { user, loading, repos, dispatch } = useContext(GithubContext);
 
   const params = useParams();
@@ -22,7 +22,6 @@ function User({}) {
 
   const {
     name,
-    company,
     avatar_url,
     location,
     bio,
@@ -76,7 +75,7 @@ function User({}) {
                 <a
                   href={html_url}
                   target="_blank"
-                  rel="noreferrrer"
+                  rel="noreferrer"
                   className="btn btn-outline"
                 >
                   Visit Github Profile
