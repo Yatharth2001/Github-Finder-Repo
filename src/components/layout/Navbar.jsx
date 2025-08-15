@@ -29,7 +29,7 @@ function Navbar({ title }) {
 }
 
 Navbar.defaultProps = {
-  title: "Githhub Finder",
+  title: "Github Finder",
 };
 
 Navbar.propTypes = {
